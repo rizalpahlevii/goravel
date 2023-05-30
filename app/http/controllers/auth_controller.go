@@ -53,3 +53,11 @@ func (r *AuthController) Login(ctx http.Context) {
 		"data":    user,
 	})
 }
+
+func (r *AuthController) Logout(ctx http.Context) {
+	ctx.Response().Json(http.StatusOK, http.Json{
+		"message": "Logout success",
+		"success": true,
+		"data":    nil,
+	})
+}

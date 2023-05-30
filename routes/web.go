@@ -21,5 +21,6 @@ func Web() {
 	facades.Route.Middleware(middleware.JwtMiddleware()).Get("/me", profileController.Me)
 	facades.Route.Post("/login", authController.Login)
 	facades.Route.Post("register", userController.Register)
+	facades.Route.Middleware(middleware.JwtMiddleware()).Delete("/logout", authController.Logout)
 	facades.Route.Get("/users/{id}", userController.Show)
 }
